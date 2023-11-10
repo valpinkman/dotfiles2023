@@ -43,7 +43,7 @@ set -gx NODE_OPTIONS "--max-old-space-size=7168"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 rbenv init - fish | source
-# starship init fish | source
+starship init fish | source
 
 # proto
 set -gx PROTO_ROOT "$HOME/.proto"

@@ -1,0 +1,89 @@
+# https://www.nerdfonts.com/cheat-sheet
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+# format = """
+# $username\
+# $hostname\
+# $directory\
+# $package\
+# $nodejs\
+# $ruby\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_status\
+# $cmd_duration\
+# $line_break\
+# $battery\
+# $character
+# """
+
+format = """\
+    $shell\
+    $username\
+    $hostname\
+    $directory\
+    $package\
+    $java\
+    $nodejs\
+    $ruby\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $rust\
+    $terraform\
+    $nix_shell\
+    $conda\
+    $memory_usage\
+    $aws\
+    $env_var\
+    $crystal\
+    $cmd_duration\
+    $jobs\
+    $battery\
+    $time\
+    $character\
+"""
+
+command_timeout = 1500
+
+[shell]
+fish_indicator = '󰈺'
+style = 'purple bold'
+disabled = false
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
+
+# [character]
+# # symbol = "[λ]"
+# # symbol = "[]" # lightning symbol
+# # symbol = "[]" # flask symbol
+# # symbol = "[]" # syringe symbol
+# # symbol = "[]" # chilli symbol
+# success_symbol = "[λ](bold green)"
+# # success_symbol = "[](bold green)"
+# error_symbol = "[](bold red)"
+# # error_symbol = "[](bold red)"
+
+[nodejs]
+# symbol = " " # node js symbol
+symbol = " " # lightning symbol
+
+[git_branch]
+# symbol = " " # git branch symbol
+symbol = " " # flask symbol
+
+[battery]
+charging_symbol = " "
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
