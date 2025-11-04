@@ -6,7 +6,7 @@ end
 set CASE_SENSITIVE true
 set ENABLE_CORRECTION true
 set COMPLETION_WAITING_DOTS true
-set EDITOR code
+set EDITOR cursor
 
 set -gx GPG_TTY (tty)
 # set -gx JAVA_HOME "$(/usr/libexec/java_home)"
@@ -46,5 +46,12 @@ rbenv init - fish | source
 starship init fish | source
 
 # proto
-set -gx PROTO_ROOT "$HOME/.proto"
-set -gx PATH "$PROTO_ROOT/bin" $PATH
+set -gx PROTO_HOME "$HOME/.proto"
+set -gx PATH "$PROTO_HOME/bin:$PROTO_HOME/shims" $PATH
+
+# pnpm
+set -gx PNPM_HOME "/Users/valpinkman/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

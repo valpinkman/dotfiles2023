@@ -91,7 +91,7 @@
 [tag]
   sort = version:refname
 [core]
-  editor = code --wait
+  editor = cursor --wait
   #pager = cat                # Outil de "pagination" de votre choix (cat -> pas de pagination)
   autocrlf = input            # sous windows mettre true au lieu de input
   whitespace = "trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol,fix"
