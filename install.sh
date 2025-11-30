@@ -8,7 +8,7 @@ olddir=~/dotfiles_old              # old dotfiles backup directory
 ssh=~/.ssh                        # ssh directory
 bin=~/.bin                        # user bin directory
 fish=~/.config/fish
-files="gemrc gitconfig gitignore vimrc"    # list of files/folders to symlink in homedir
+files="gemrc gitconfig gitignore vimrc aerospace.toml"    # list of files/folders to symlink in homedir
 
 echo "Installing xcode-stuff"
 xcode-select --install

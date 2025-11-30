@@ -55,3 +55,6 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# Added by Antigravity
+fish_add_path /Users/valpinkman/.antigravity/antigravity/bin
