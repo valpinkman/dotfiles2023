@@ -47,8 +47,12 @@ format = """\
     $jobs\
     $battery\
     $time\
+    $line_break\
     $character\
 """
+
+[line_break]
+disabled = false
 
 command_timeout = 1500
 
@@ -75,11 +79,11 @@ vicmd_symbol = "[❮](green)"
 
 [nodejs]
 # symbol = " " # node js symbol
-symbol = " " # lightning symbol
+# symbol = " " # lightning symbol
 
 [git_branch]
-# symbol = " " # git branch symbol
-symbol = " " # flask symbol
+# symbol = " " # syringe symbol
+# symbol = " " # flask symbol
 
 [battery]
 charging_symbol = " "

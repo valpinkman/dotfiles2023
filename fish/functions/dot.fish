@@ -1,3 +1,3 @@
-function dot --wraps='cd /Users/valpinkman/dotfiles' --description 'alias dot=cd /Users/valpinkman/dotfiles'
-  cd /Users/valpinkman/dotfiles $argv;
+function dot --wraps='cd ~/dotfiles' --description 'alias dot=cd ~/dotfiles'
+  cd ~/dotfiles $argv;
 end

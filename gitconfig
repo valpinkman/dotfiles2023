@@ -1,7 +1,7 @@
 [user]
 	name = Valentin D. Pinkman
-	email = valentin.d.pinkman@hey.com
-  signingkey = A43E1E7F
+	email = valentin.dealmeida@mistral.ai
+	signingkey = 7CD82C583EFB980F
 [github]
   user = valpinkman
 [color]
@@ -90,6 +90,7 @@
   prompt = false
 [tag]
   sort = version:refname
+	gpgSign = true
 [core]
   editor = cursor --wait
   #pager = cat                # Outil de "pagination" de votre choix (cat -> pas de pagination)
@@ -100,7 +101,7 @@
   ignorecase = false
   excludesfile = ~/.gitignore
 [commit]
-  gpgsign = true
+	gpgsign = true
 [gpg]
   program = /usr/local/bin/gpg
 [filter "lfs"]

@@ -20,12 +20,6 @@ if test ! $(which brew); then
   echo "done"
 fi
 
-if test ! $(which proto); then
-  echo "Installing proto..."
-  curl -fsSL https://moonrepo.dev/install/proto.sh | bash
-  echo "done"
-fi
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Update homebrew recipes
