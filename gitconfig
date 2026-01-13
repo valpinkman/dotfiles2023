@@ -92,7 +92,7 @@
   sort = version:refname
 	gpgSign = true
 [core]
-  editor = cursor --wait
+  editor = hx
   #pager = cat                # Outil de "pagination" de votre choix (cat -> pas de pagination)
   autocrlf = input            # sous windows mettre true au lieu de input
   whitespace = "trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol,fix"

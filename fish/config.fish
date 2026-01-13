@@ -8,7 +8,8 @@ set --erase --universal fish_key_bindings
 set CASE_SENSITIVE true
 set ENABLE_CORRECTION true
 set COMPLETION_WAITING_DOTS true
-set EDITOR hx
+
+set -gx EDITOR hx
 
 # Ensure that GPG Agent is used as the SSH agent
 set -e SSH_AUTH_SOCK
