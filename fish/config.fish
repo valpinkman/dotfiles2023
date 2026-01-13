@@ -8,14 +8,20 @@ set --erase --universal fish_key_bindings
 set CASE_SENSITIVE true
 set ENABLE_CORRECTION true
 set COMPLETION_WAITING_DOTS true
-set EDITOR cursor
+set EDITOR hx
+
+# Ensure that GPG Agent is used as the SSH agent
+set -e SSH_AUTH_SOCK
+set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+
+# GPG Agent
+# Start or re-use a gpg-agent.
+gpgconf --launch gpg-agent
 
 set -gx GPG_TTY (tty)
-# set -gx JAVA_HOME "$(/usr/libexec/java_home)"
 set -gx JOBS max
 set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
-# set -gx PNPM_HOME $HOME/Library/pnpm
 set -gx SSH_KEY_PATH $HOME/.ssh/
 
 # ANDROID SETUP
@@ -51,7 +57,7 @@ set -gx NODE_OPTIONS "--max-old-space-size=7168"
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-rbenv init - fish | source
+# rbenv init - fish | source
 starship init fish | source
 
 # proto
@@ -59,7 +65,7 @@ set -gx PROTO_HOME "$HOME/.proto"
 set -gx PATH "$PROTO_HOME/bin:$PROTO_HOME/shims" $PATH
 
 # pnpm
-set -gx PNPM_HOME "/Users/valentin.dealmeida/Library/pnpm"
+set -gx PNPM_HOME "~/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
@@ -68,3 +74,6 @@ end
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+
+# uv
+fish_add_path "/Users/valentin.dealmeida/.local/bin"

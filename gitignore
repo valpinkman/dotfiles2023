@@ -47,3 +47,6 @@ local-ci.log
 
 .yalc/
 .expo/*
+
+# Jujutsu #
+.jj/*
