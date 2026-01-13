@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "skills": {
+    "electron": {
+      "source": "teachingai/full-stack-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/teachingai/full-stack-skills.git",
+      "skillPath": "skills/electron/SKILL.md",
+      "skillFolderHash": "485827acb0b580f21d16e5c48b160abe8b8d4a63",
+      "installedAt": "2026-02-02T09:06:41.619Z",
+      "updatedAt": "2026-02-02T09:06:41.619Z"
+    },
+    "MCP Integration": {
+      "source": "anthropics/claude-code",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/anthropics/claude-code.git",
+      "skillPath": "plugins/plugin-dev/skills/mcp-integration/SKILL.md",
+      "skillFolderHash": "3e57353b7b88f20216666d616b14015f3574554c",
+      "installedAt": "2026-02-02T10:49:44.874Z",
+      "updatedAt": "2026-02-02T10:49:44.874Z"
+    },
+    "jujutsu": {
+      "source": "knoopx/pi",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/knoopx/pi.git",
+      "skillPath": "agent/skills/jujutsu/SKILL.md",
+      "skillFolderHash": "4ea39daca91c9209c6feb54e02c5260627c7b3ae",
+      "installedAt": "2026-02-23T08:47:03.292Z",
+      "updatedAt": "2026-02-23T08:47:03.292Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "claude-code"
+  ]
+}

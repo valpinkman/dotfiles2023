@@ -60,20 +60,29 @@
   #mergeoptions = --no-ff     	# Ne pas décommenter, préférer l'alias 'git me' qui utilise le --no-ff,
                                 # et conserver l'utilisation de 'git merge' par défaut pour les situations qui requièrent le fast-forward
   autosetuprebase = never
+	sort = -committerdate
 [grep]
   extendedRegexp = true
 [log]
   abbrevCommit = true
 [diff]
-  mnemonicPrefix = true
+	mnemonicPrefix = true
   wordRegex = .
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
 [fetch]
   recurseSubmodules = on-demand
+	prune = true
+	pruneTags = true
+	all = true
 [pull]
   rebase = false      	# Ne pas décommenter, préférer l'alias 'git up' qui fait un 'git pull --rebase",
                         # et garder la commande 'git pull' par défaut pour les situations sans rebase (merge par exemple)
 [push]
-  default = upstream
+	default = simple
+	autoSetupRemote = true
+	followTags = true
 [rerere]
   # If, like me, you like rerere, decomment these
   # autoupdate = true
@@ -89,7 +98,7 @@
   keepTemporaries = false
   prompt = false
 [tag]
-  sort = version:refname
+	sort = version:refname
 	gpgSign = true
 [core]
   editor = hx
@@ -115,3 +124,8 @@
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[column]
+	ui = auto
+[rebase]
+	autoStash = true
+	updateRefs = true

@@ -11,13 +11,13 @@ set COMPLETION_WAITING_DOTS true
 
 set -gx EDITOR hx
 
-# Ensure that GPG Agent is used as the SSH agent
-set -e SSH_AUTH_SOCK
-set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
-
 # GPG Agent
 # Start or re-use a gpg-agent.
 gpgconf --launch gpg-agent
+
+# Ensure that GPG Agent is used as the SSH agent
+set -e SSH_AUTH_SOCK
+set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 
 set -gx GPG_TTY (tty)
 set -gx JOBS max
@@ -33,12 +33,15 @@ set -gx SSH_KEY_PATH $HOME/.ssh/
 # Claude Mistral
 set -gx CLAUDE_CODE_USE_VERTEX 1
 set -gx CLOUD_ML_REGION global
+set -gx GOOGLE_CLOUD_PROJECT code-model-vertex
+set -gx GOOGLE_APPLICATION_CREDENTIALS $HOME/.config/gcloud/application_default_credentials.json
 set -gx ANTHROPIC_VERTEX_PROJECT_ID code-model-vertex
 set -gx ANTHROPIC_MODEL "claude-sonnet-4-5@20250929"
 set -gx ANTHROPIC_SMALL_FAST_MODEL "claude-haiku-4-5@20251001"
 
 # PATH
 set -gx PATH $PATH /Users/valentin.dealmeida/mistral/dashboard/ts/node_modules/.bin
+set -gx PATH $PATH /Users/valentin.dealmeida/.local/bin
 set -gx PATH $PATH /usr/local/sbin
 set -gx PATH $PATH /usr/local/bin
 set -gx PATH $PATH /usr/sbin
@@ -53,7 +56,7 @@ set -gx PATH $PATH /bin
 # set -gx PATH $PATH $HOME/.cargo/bin
 
 # node
-set -gx NODE_OPTIONS "--max-old-space-size=7168"
+# set -gx NODE_OPTIONS "--max-old-space-size=7168"
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -66,15 +69,17 @@ set -gx PROTO_HOME "$HOME/.proto"
 set -gx PATH "$PROTO_HOME/bin:$PROTO_HOME/shims" $PATH
 
 # pnpm
-set -gx PNPM_HOME "~/Library/pnpm"
+set -gx PNPM_HOME "$HOME/Library/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
 
+# Github
+set -gx GITHUB_PERSONAL_ACCESS_TOKEN $(gh auth token)
+
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
-
-# uv
-fish_add_path "/Users/valentin.dealmeida/.local/bin"
+# opencode
+fish_add_path /Users/valentin.dealmeida/.opencode/bin
