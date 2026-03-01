@@ -8,7 +8,7 @@ olddir=~/dotfiles_old              # old dotfiles backup directory
 ssh=~/.ssh                        # ssh directory
 bin=~/.bin                        # user bin directory
 fish=~/.config/fish
-files="gemrc gitconfig gitignore vimrc aerospace.toml"    # list of files/folders to symlink in homedir
+files="gemrc gitconfig gitignore vimrc"    # list of files/folders to symlink in homedir
 
 echo "Installing xcode-stuff"
 xcode-select --install
@@ -92,8 +92,28 @@ mkdir -p ~/.config
 ln -s $dir/starship.toml ~/.config/starship.toml
 echo "done"
 
+echo "Linking aerospace config"
+ln -s $dir/aerospace.toml ~/.config/aerospace/aerospace.toml
+echo "done"
+
 echo "Creating $bin if it doesn't exist already"
 mkdir -p $bin
+echo "done"
+
+echo "AI coding setup"
+mkdir -p ~/.claude
+mkdir -p ~/.config/opencode
+mkdir -p ~/.gemini
+
+ln -s $dir/ai/skills ~/.claude/skills
+ln -s $dir/ai/agents ~/.claude/agents
+ln -s $dir/ai/commands ~/.claude/commands
+ln -s $dir/ai/skills ~/.config/opencode/skills
+ln -s $dir/ai/agents ~/.config/opencode/agents
+ln -s $dir/ai/commands ~/.config/opencode/commands
+ls -s $dir/ai/skills ~/.gemini/skills
+ls -s $dir/ai/agents ~/.gemini/agents
+ls -s $dir/ai/commands ~/.gemini/commands
 echo "done"
 
 killall Finder
