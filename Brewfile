@@ -2,8 +2,6 @@ tap "xcodesorg/made"
 
 brew "git"
 brew "gh"
-brew "gnupg"
-brew "pinentry-mac"
 brew "tig"
 
 brew "fish"
