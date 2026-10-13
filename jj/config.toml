@@ -1,0 +1,15 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Valentin D. Pinkman"
+email = "valentin.d.pinkman@hey.com"
+
+[ui]
+editor = "hx"
+default-command = "log"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "~/.ssh/secretive_signing.pub"
+backends.ssh.allowed-signers = "~/.gitallowedsigners"

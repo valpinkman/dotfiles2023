@@ -12,7 +12,6 @@
 	interactive = always
 	ui = true
 	pager = true
-	filemode = false
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -81,9 +80,8 @@
 	# enabled = true
 [status]
 	submoduleSummary = true
-	showUntrackedFiles = all
 [merge]
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 	log = true                # Include summaries of merged commits in newly created merge commit messages
 [mergetool]
 	keepBackup = false
@@ -95,7 +93,7 @@
 	editor = zed --wait
 	#pager = cat                # Outil de "pagination" de votre choix (cat -> pas de pagination)
 	autocrlf = input            # sous windows mettre true au lieu de input
-	whitespace = "trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol,fix"
+	whitespace = "trailing-space,space-before-tab,-indent-with-non-tab,-cr-at-eol"
 	eol = lf
 	precomposeunicode = true    # Sur mac uniquement, pour régler les problèmes d'accents (re-cloner si vieux projet)
 	ignorecase = false
